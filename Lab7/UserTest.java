@@ -8,8 +8,8 @@ public class UserTest {
         user.setPassword("123456");
         user.setMoney(1000);
         user.introduce();
-        user.expense(2000,in);
-        user.expense(500,in);
+        user.expense(2000, in);
+        user.expense(500, in);
         user.income(1000);
         user.introduce();
         in.close();

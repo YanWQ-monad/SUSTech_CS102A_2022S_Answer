@@ -14,12 +14,12 @@ public class Food {
     }
 
     public void getMenu() {
-        System.out.printf("[id] %d  [type] %-10s [name] %-20s [size] %2d (Inches) %.2f $\n",
-                id, type, name, size, price);
+        System.out.printf("[id] %d  [type] %-10s [name] %-10s [size] %2d (Inches) %5.2f $\n",
+                this.id, this.type, this.name, this.size, this.price);
     }
 
     public int getId() {
-        return id;
+        return this.id;
     }
 
     public void setId(int id) {
@@ -27,7 +27,7 @@ public class Food {
     }
 
     public String getName() {
-        return name;
+        return this.name;
     }
 
     public void setName(String name) {
@@ -35,7 +35,7 @@ public class Food {
     }
 
     public String getType() {
-        return type;
+        return this.type;
     }
 
     public void setType(String type) {
@@ -43,7 +43,7 @@ public class Food {
     }
 
     public int getSize() {
-        return size;
+        return this.size;
     }
 
     public void setSize(int size) {
@@ -51,7 +51,7 @@ public class Food {
     }
 
     public double getPrice() {
-        return price;
+        return this.price;
     }
 
     public void setPrice(double price) {

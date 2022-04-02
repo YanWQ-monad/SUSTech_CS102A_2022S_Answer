@@ -7,7 +7,7 @@ public class SoftOpening {
         ArrayList<Food> foodList = generateMenu();
         User user = generateUser(in);
         user.introduce();
-        userConsume(foodList,user,in);
+        userConsume(foodList, user, in);
         user.introduce();
         in.close();
     }
@@ -21,22 +21,21 @@ public class SoftOpening {
         foodList.add(new Food(4, "noodles", "Beef", 6, 14));
 
         return foodList;
-
     }
 
     public static void getMenu(ArrayList<Food> foodList) {
-        System.out.println("---------- welcome, this is Start of the Menu ------");;
+        System.out.println("------------------ welcome, this is Start of the Menu ----------------");
 
-        for (int i = 0; i < foodList.size(); i++)
-            foodList.get(i).getMenu();
+        for (Food food : foodList)
+            food.getMenu();
 
-        System.out.printf("footer");
+        System.out.println("------------------ welcome, this is  End  of the Menu ----------------");
     }
 
     public static User generateUser(Scanner in) {
-        System.out.print("Generate a user, please input name: ");;
+        System.out.print("Generate a user, please input name: ");
         String account = in.next();
-        System.out.println("balance($): ");
+        System.out.print("balance($): ");
         double money = in.nextDouble();
 
         return new User(account, "123456", money);
@@ -44,26 +43,26 @@ public class SoftOpening {
 
     public static void userConsume(ArrayList<Food> foodList, User user, Scanner in) {
         getMenu(foodList);
-        System.out.print("please input .....");
+        System.out.println("please input the food ID and the number you want, to exit input 0 as food ID");
 
         double allCost = 0;
 
         while (true) {
-            System.out.print("food id: ");
+            System.out.print("food id (input 0 to end select): ");
             int id = in.nextInt();
             if (id == 0)
                 break;
 
-            System.out.print("number: ");
+            System.out.print("number of this food: ");
             int number = in.nextInt();
 
             Food food = null;
-            for (int i = 0; i < foodList.size(); i++)
-                if (foodList.get(i).getId() == id)
-                    food = foodList.get(i);
+            for (Food value : foodList)
+                if (value.getId() == id)
+                    food = value;
 
+            assert food != null;
             double cost = food.getPrice() * number;
-//            System.out.println(cost);
             allCost += cost;
         }
 

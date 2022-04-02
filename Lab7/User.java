@@ -6,6 +6,7 @@ public class User {
     private double money;
 
     public User() {
+        this("", "", 0.0);
     }
 
     public User(String account, String password, double money) {
@@ -20,7 +21,7 @@ public class User {
 
     public void expense(double value, Scanner in) {
         if (value > money) {
-            System.out.printf("Plan to expense %.2f dollar but no sufficient funds\n", value);;
+            System.out.printf("Plan to expense %.2f dollar but no sufficient funds\n", value);
         }
         else {
             System.out.printf("Plan to expense %.2f dollar\n", value);
@@ -34,11 +35,11 @@ public class User {
 
     public void income(double value) {
         this.money += value;
-        System.out.printf("Got %.2f as income, balance is %.2f dollar\n", value, this.money);;
+        System.out.printf("Got %.2f as income, balance is %.2f dollar\n", value, this.money);
     }
 
     public String getAccount() {
-        return account;
+        return this.account;
     }
 
     public void setAccount(String account) {
@@ -46,7 +47,7 @@ public class User {
     }
 
     public String getPassword() {
-        return password;
+        return this.password;
     }
 
     public void setPassword(String password) {
@@ -54,7 +55,7 @@ public class User {
     }
 
     public double getMoney() {
-        return money;
+        return this.money;
     }
 
     public void setMoney(double money) {
